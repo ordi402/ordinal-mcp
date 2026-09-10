@@ -43,7 +43,6 @@
     "url": "https://github.com/ordi402/ordinal-mcp/issues"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   }
 }
