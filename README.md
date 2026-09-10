@@ -11,7 +11,8 @@ from it — never the key.
 
 ## Install
 
-Nothing to install. Both clients run it on demand.
+Nothing to install. Every client below runs it on demand; they differ only
+in where the configuration lives.
 
 **Claude Code**
 
@@ -30,8 +31,54 @@ args = ["-y", "@ordinal402/ordinal-mcp@latest"]
 ORDINAL_PRIVATE_KEY = "0xYOUR_KEY"
 ```
 
+**Claude Desktop** — `~/Library/Application Support/Claude/claude_desktop_config.json`
+on macOS, `%APPDATA%\Claude\claude_desktop_config.json` on Windows. Quit and
+reopen the app afterwards; a window reload is not enough.
+
+```json
+{
+  "mcpServers": {
+    "ordinal": {
+      "command": "npx",
+      "args": ["-y", "@ordinal402/ordinal-mcp@latest"],
+      "env": { "ORDINAL_PRIVATE_KEY": "0xYOUR_KEY" }
+    }
+  }
+}
+```
+
+**Cursor** — same shape, in `~/.cursor/mcp.json`, or `.cursor/mcp.json` inside a
+repository to scope it to one project. Windsurf reads the same shape from
+`~/.codeium/windsurf/mcp_config.json`, Gemini CLI from `~/.gemini/settings.json`.
+
+**VS Code** — `.vscode/mcp.json`. The object is named `servers`, not
+`mcpServers`, and wants an explicit type:
+
+```json
+{
+  "servers": {
+    "ordinal": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@ordinal402/ordinal-mcp@latest"],
+      "env": { "ORDINAL_PRIVATE_KEY": "0xYOUR_KEY" }
+    }
+  }
+}
+```
+
+**Anything else** — it is JSON-RPC 2.0 over stdin and stdout, so any client that
+can launch a command works:
+
+```bash
+ORDINAL_PRIVATE_KEY=0xYOUR_KEY npx -y @ordinal402/ordinal-mcp@latest
+```
+
 Leave the key out and everything still works except paid calls — browsing and
 free trials need no wallet at all.
+
+Longer walkthrough, including funding the wallet and what to do when something
+fails: <https://www.ordinal402.xyz/docs#agents>.
 
 ## Before your first paid call
 
