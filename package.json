@@ -1,0 +1,49 @@
+{
+  "name": "ordinal-mcp",
+  "version": "0.1.0",
+  "description": "Local MCP bridge to the Ordinal marketplace. Pays for x402 service calls from your own wallet \u2014 the private key signs locally and never leaves your machine.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "ordinal-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@x402/core": "^2.23.0",
+    "@x402/evm": "^2.23.0",
+    "viem": "^2.52.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  },
+  "keywords": [
+    "mcp",
+    "x402",
+    "ordinal",
+    "agent-payments",
+    "robinhood-chain"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ordi402/ordinal-mcp.git"
+  },
+  "homepage": "https://github.com/ordi402/ordinal-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/ordi402/ordinal-mcp/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
