@@ -1,4 +1,4 @@
-# ordinal-mcp
+# @ordinal402/ordinal-mcp
 
 Pay for [Ordinal](https://www.ordinal402.xyz) marketplace calls from your own
 wallet, in Claude Code or Codex.
@@ -16,7 +16,7 @@ Nothing to install. Both clients run it on demand.
 **Claude Code**
 
 ```bash
-claude mcp add ordinal -e ORDINAL_PRIVATE_KEY=0xYOUR_KEY -- npx -y ordinal-mcp@latest
+claude mcp add ordinal -e ORDINAL_PRIVATE_KEY=0xYOUR_KEY -- npx -y @ordinal402/ordinal-mcp@latest
 ```
 
 **Codex** — add to `~/.codex/config.toml`:
@@ -24,7 +24,7 @@ claude mcp add ordinal -e ORDINAL_PRIVATE_KEY=0xYOUR_KEY -- npx -y ordinal-mcp@l
 ```toml
 [mcp_servers.ordinal]
 command = "npx"
-args = ["-y", "ordinal-mcp@latest"]
+args = ["-y", "@ordinal402/ordinal-mcp@latest"]
 
 [mcp_servers.ordinal.env]
 ORDINAL_PRIVATE_KEY = "0xYOUR_KEY"

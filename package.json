@@ -1,5 +1,5 @@
 {
-  "name": "ordinal-mcp",
+  "name": "@ordinal402/ordinal-mcp",
   "version": "0.1.0",
   "description": "Local MCP bridge to the Ordinal marketplace. Pays for x402 service calls from your own wallet \u2014 the private key signs locally and never leaves your machine.",
   "license": "MIT",
